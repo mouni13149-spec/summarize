@@ -1,0 +1,12 @@
+Product Review Meeting Notes
+
+The team reviewed progress on the document intelligence roadmap. The summarization feature is now able to ingest long meeting notes, articles, and PDF text extracted from uploaded files. The first release will focus on concise executive summaries, action items, blockers, and owners.
+
+Engineering reported that the local extractive summarizer is fast enough for interactive demos and can summarize large text inputs without external APIs. The machine learning roadmap includes fine-tuning BART-large on labeled document-summary pairs and evaluating quality with ROUGE-L. The target benchmark is to reach strong summary overlap while keeping latency low for user-facing workflows.
+
+Design proposed a simple Streamlit interface with a file uploader, summary length control, and a large summary text area. Product requested that summaries remain under 300 words by default and include enough detail for managers to understand decisions without reading the full document.
+
+The main risks are noisy PDF extraction, missing context from tables, and hallucinated details if a generative model is added later. The team agreed to start with deterministic extractive summaries, then add a fine-tuned model path after the evaluation pipeline is stable.
+
+Action items: Engineering will finish the benchmark script and CLI. Design will refine the Streamlit app. Product will collect synthetic document-summary examples for testing. The next review is scheduled for May 15, 2026.
+

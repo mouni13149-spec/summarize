@@ -1,0 +1,6 @@
+Document summarization systems help users understand long-form information quickly. They are especially useful for meeting notes, research articles, legal drafts, invoices, support transcripts, and internal documentation. A good summarizer should preserve the most important decisions, facts, and action items while removing repetition.
+
+Extractive summarizers select important sentences from the original text. They are fast, deterministic, and easy to evaluate, but they can sound less fluent. Abstractive summarizers generate new wording and can produce more natural summaries, but they require stronger models and careful validation.
+
+For portfolio projects, a practical design is to combine a local extractive baseline with an optional fine-tuned transformer. The baseline proves the end-to-end pipeline works, while the fine-tuning script demonstrates machine learning depth. Evaluation with ROUGE-L gives a measurable quality signal that can be reported alongside latency.
+
